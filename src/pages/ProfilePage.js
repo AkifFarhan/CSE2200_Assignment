@@ -8,7 +8,8 @@ export default function ProfilePage()
   {
     fullName: "AKIF FARHAN",
     email: "akiffarhan@gmail.com",
-    avatar: photo
+    avatar: photo,
+    phone: "+8801861252364",
   };
 
   return (
@@ -27,6 +28,9 @@ export default function ProfilePage()
           </ListGroup.Item>
           <ListGroup.Item>
             <strong>Email:</strong> {user.email}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <strong>Phone:</strong> {user.phone}
           </ListGroup.Item>
 
         </ListGroup>
