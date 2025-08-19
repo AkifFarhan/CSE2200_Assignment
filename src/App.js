@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route, NavLink, Navigate } from "react-router-dom";
 import ProfilePage from "./pages/ProfilePage";
 import ArticlesPage from "./pages/ArticlesPage";
+import photo from "./assets/nazrul.gif";
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
@@ -30,18 +31,33 @@ export default function App() {
         >
           {collapsed ? "»" : "«"} {collapsed ? "" : "Collapse"}
         </button>
+      <div
+        style={{display: "flex", alignItems: "center", gap: 10,marginTop: 16,padding: "8px 6px",
+          justifyContent: collapsed ? "center" : "flex-start",
+        }}
+      >
+        <img
+          src={photo}
+          alt="profile"
+          style={{ width: 36,  height: 36, borderRadius: "50%", objectFit: "cover",
+          }}
+        />
+        {!collapsed && (
+          <span style={{ fontWeight: 600, fontSize: 14 }}>Akif Farhan</span>
+        )}
+      </div>
 
-        <nav style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
-          <NavLink to="/profile" style={linkStyle}>
-            {collapsed ? "👤" : "👤 Profile"}
-          </NavLink>
-          <NavLink to="/articles" style={linkStyle}>
-            {collapsed ? "📝" : "📝 My Articles"}
-          </NavLink>
-        </nav>
-      </aside>
+      <nav style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 8 }}>
+                <NavLink to="/profile" style={linkStyle}>
+                  {collapsed ? "👤" : "👤 Profile"}
+                </NavLink>
+                <NavLink to="/articles" style={linkStyle}>
+                  {collapsed ? "📝" : "📝 My Articles"}
+                </NavLink>
+              </nav>
+            </aside>
 
-      {/* Main */}
+
       <main style={{ padding: 24 }}>
         <Routes>
           <Route path="/" element={<Navigate to="/profile" replace />} />
