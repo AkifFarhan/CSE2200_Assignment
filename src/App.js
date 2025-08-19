@@ -29,7 +29,7 @@ export default function App() {
           className="btn btn-outline-secondary btn-sm"
           onClick={() => setCollapsed((c) => !c)}
         >
-          {collapsed ? "»" : "«"} {collapsed ? "" : "Collapse"}
+          {collapsed ? "»" : "«"} {collapsed ? "" : ""}
         </button>
       <div
         style={{display: "flex", alignItems: "center", gap: 10,marginTop: 16,padding: "8px 6px",
